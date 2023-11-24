@@ -1,0 +1,24 @@
+<app-header title="Inicio"></app-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-card *ngFor="let asignatura of asignaturas" (click)="verAsistencia(asignatura.id)">
+      <ion-card-header>
+        <ion-img [src]="asignatura.imagen" alt="{{ asignatura.nombre }}"></ion-img>
+      </ion-card-header>
+      <ion-card-content>
+        {{ asignatura.nombre }}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  
+<!--========Nuevo Producto============-->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addUpdateProduct()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

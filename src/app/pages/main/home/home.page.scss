@@ -1,0 +1,13 @@
+/* Estilo base para las tarjetas */
+.ion-card-responsive {
+    max-width: 300px;
+    margin: 10px;
+  }
+  
+  /* Estilo para pantallas más pequeñas (por ejemplo, teléfonos) */
+  @media screen and (max-width: 768px) {
+    .ion-card-responsive {
+      max-width: 100%;
+    }
+  }
+  

@@ -1,0 +1,35 @@
+<app-header [isModal]="true" title="Codigo QR"></app-header>
+<ion-content>
+
+    <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" (keypress.enter)="submit()">
+
+        <!--======Si existe una imagen========-->
+        <ion-avatar *ngIf="form.value.image">
+            <img [src]="form.value.image" />
+        </ion-avatar>
+
+        <!--======Si no existe una imagen========-->
+        <ion-icon *ngIf="!form.value.image"  class="image-icon" name="image-outline"></ion-icon>
+
+        <br>
+        <!--======Tomar/Seleccionar una imagen========-->
+        <ion-button (click)="takeImage()" mode="ios" size="small" shape="round">
+            Tomar/Seleccionar
+        </ion-button>
+
+        <!--======QR========-->
+        <div style="text-align: center;">
+            <a href="/src/app/service/asignaturas.service.ts/asignaturas/1" border="0" style="cursor: default; display: inline-block;" rel="nofollow">
+              <img src="https://chart.googleapis.com/chart?cht=qr&chl=Ahora%20est%C3%A1s%20presente.%20%3AD&chs=180x180&choe=UTF-8&chld=L|2">
+            </a>
+          </div>
+        
+          <!--======Button-generador========-->
+        <ion-button mode="ios" class="ion-margin-top ion-margin-bottom" type="submit" [disabled]="form.invalid" expand="full">
+        Generar QR
+        <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+        </ion-button>
+
+       
+       </form>
+</ion-content>  

@@ -1,0 +1,22 @@
+<app-header title="Asistencia"></app-header>
+
+<ion-content>
+  <div *ngIf="asignatura"> <!-- Verificar que asignatura esté definida -->
+    <ion-card *ngIf="asignatura">
+      <ion-card-header (click)="toggleCardDetails(asignatura)">
+        <ion-img [src]="asignatura.imagen" alt="{{ asignatura.nombre }}"></ion-img>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{ asignatura.nombre }}</h2>
+        <div *ngIf="asignatura.showDetails">
+          <!-- Detalles adicionales aquí -->
+          <p>Sigla: {{ asignatura.sigla }}</p>
+          <p>Porcentaje de Asistencia: {{ asignatura.porcentajeAsistencia }}%</p>
+          <p>Fecha: {{ asignatura.fecha }}</p>
+          <p>Asistencia: {{ asignatura.asistencia }}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+</ion-content>
